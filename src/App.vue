@@ -7,8 +7,8 @@
     <!-- 导航链接 -->
     <nav>
       <router-link to="/">首页</router-link>
-      <router-link to="/driving-route-planner">驾车路径规划</router-link>
       <router-link to="/user-preferences">用户偏好设置</router-link>
+	  <router-link to="/driving-route-planner">驾车路径规划</router-link>
     </nav>
 
     <!-- 动态渲染内容 -->
