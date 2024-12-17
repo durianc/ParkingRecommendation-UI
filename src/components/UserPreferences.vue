@@ -200,7 +200,22 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.container {
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+  background: linear-gradient(135deg, #e0f7fa, #f1f8e9); /* 添加渐变色背景 */
+  
+  min-height: 80vh; /* 新增：最小高度为整个视口高度 */
+  min-width: 100%;
+  display: flex;     /* 新增：启用 Flexbox 布局 */
+  flex-direction: column; /* 新增：内容保持纵向排列 */
+  justify-content: center; /* 新增：内容垂直居中 */
+}
+
+
 /* 让表单元素宽度适中，不能过宽 */
 .form-control, .form-select {
   max-width: 100%;

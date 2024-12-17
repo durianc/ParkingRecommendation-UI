@@ -28,7 +28,7 @@
 		<transition name="slide">
 			<div v-if="selectedParking" class="sidebar">
 				<div class="sidebar-header">
-					<h2>{{ selectedParking.parking_type }} - 详情</h2>
+					<h2>{{ selectedParking.parking_type }}</h2>
 					<span class="close" @click="closeSidebar">&times;</span>
 				</div>
 				<div class="sidebar-content">
@@ -94,17 +94,30 @@ onMounted(fetchRecommendations);
 	--transition-duration: 0.3s;
 }
 
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%; /* 确保高度覆盖整个屏幕 */
+	overflow: hidden; /* 防止多余滚动条 */
+}
+
 .container {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 20px;
+	width: 100vw; /* 占据屏幕的宽度 */
+	height: calc(100vh - 50px); /* 减去菜单栏高度，如有需要调整 */
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	color: var(--text-color);
+	background: linear-gradient(135deg, #e0f7fa, #f1f8e9); /* 渐变背景 */
+	background-size: cover; /* 确保背景完整覆盖 */
+	background-position: center; /* 居中背景 */
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
 }
 
 h1 {
 	text-align: center;
-	color: var(--primary-color);
+	color: #ffc107;
 	margin-bottom: 30px;
 }
 
@@ -140,7 +153,7 @@ h1 {
 }
 
 .card h2 {
-	color: var(--primary-color);
+	color: #0d6efdd6;
 	margin-bottom: 10px;
 }
 
@@ -152,7 +165,7 @@ h1 {
 	position: fixed;
 	top: 0;
 	right: 0;
-	width: 35%;
+	width: 22%;
 	height: 100%;
 	background-color: var(--secondary-color);
 	box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
@@ -172,6 +185,10 @@ h1 {
 
 .sidebar-header h2 {
 	color: var(--primary-color);
+}
+
+.sidebar-content {
+	text-align: left;
 }
 
 .sidebar-content p {
